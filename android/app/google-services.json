@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "543813647536",
+    "project_id": "notesy-worldie",
+    "storage_bucket": "notesy-worldie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543813647536:android:55e24b2d863ecb81990f75",
+        "android_client_info": {
+          "package_name": "com.worldie.notesy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuIvXg3ABfNmdJk2vsXwabeHHDaqQLV-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
