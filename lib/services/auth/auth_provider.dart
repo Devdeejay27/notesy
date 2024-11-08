@@ -1,6 +1,7 @@
 import 'package:notesy/services/auth/auth_user.dart';
 
 abstract class AuthProvider {
+  Future<void> initialize();
   AuthUser? get currentUser;
   Future<AuthUser> logIn({
     required String email,
@@ -11,4 +12,5 @@ abstract class AuthProvider {
     required String password,
   });
   Future<void> logOut();
+  Future<void> sendEmailVerification();
 }
