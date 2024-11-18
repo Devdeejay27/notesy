@@ -1,4 +1,4 @@
-import 'dart:async';
+/* import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:notesy/extensions/list/filter.dart';
 import 'package:notesy/services/crud/crud_exceptions.dart';
@@ -356,3 +356,4 @@ const createNoteTable = '''CREATE TABLE IF NOT EXISTS "note" (
 	    PRIMARY KEY("id" AUTOINCREMENT),
 	    FOREIGN KEY("user_id") REFERENCES "user"("id")
     );''';
+  */
