@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:notesy/constants/routes.dart';
 import 'package:notesy/services/auth/auth_exceptions.dart';
