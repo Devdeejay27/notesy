@@ -4,6 +4,7 @@ import 'package:notesy/constants/routes.dart';
 import 'package:notesy/services/auth/auth_exceptions.dart';
 import 'package:notesy/services/auth/bloc/auth_bloc.dart';
 import 'package:notesy/services/auth/bloc/auth_event.dart';
+import 'package:notesy/services/auth/bloc/auth_state.dart';
 import 'package:notesy/utilities/dialogs/error_dialog.dart';
 
 class LoginView extends StatefulWidget {
@@ -58,30 +59,35 @@ class _LoginViewState extends State<LoginView> {
               hintText: 'Enter your passsword here',
             ),
           ),
-          TextButton(
-            onPressed: () async {
-              final email = _email.text;
-              final password = _password.text;
-              try {
+          BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) async {
+              if (state is AuthStateLoggedOut) {
+                if (state.exception is InvalidEmailOrPasswordAuthException) {
+                  await showErrorDialog(
+                    context,
+                    'Invalid Email or Password',
+                  );
+                } else if (state.exception is GenericAuthException) {
+                  await showErrorDialog(
+                    context,
+                    'Authentication Error',
+                  );
+                }
+              }
+            },
+            child: TextButton(
+              onPressed: () async {
+                final email = _email.text;
+                final password = _password.text;
                 context.read<AuthBloc>().add(
                       AuthEventLogIn(
                         email,
                         password,
                       ),
                     );
-              } on InvalidEmailOrPasswordAuthException {
-                await showErrorDialog(
-                  context,
-                  'Invalid Email/Password',
-                );
-              } on GenericAuthException {
-                await showErrorDialog(
-                  context,
-                  'Authentication Error',
-                );
-              }
-            },
-            child: const Text('Login'),
+              },
+              child: const Text('Login'),
+            ),
           ),
           TextButton(
             onPressed: () {
