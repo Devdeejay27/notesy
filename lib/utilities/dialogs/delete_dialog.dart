@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:notesy/extensions/buildcontext/loc.dart';
 import 'package:notesy/utilities/dialogs/generic_dialog.dart';
 
 Future<bool> showDeleteDialog(BuildContext context) {
   return showGenericDialog(
     context: context,
-    title: 'Delete',
-    content: 'Are you sure you want to delete this item?',
+    title: context.loc.delete,
+    content: context.loc.delete_note_prompt,
     optionBuilder: () => {
-      'Cancel': false,
-      'Yes': true,
+      context.loc.cancel: false,
+      context.loc.yes: true,
     },
   ).then(
     (value) => value ?? false,
