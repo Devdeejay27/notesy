@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notesy/constants/routes.dart';
 import 'package:notesy/helpers/loading/loading_screen.dart';
+import 'package:notesy/l10n/app_localizations.dart';
 import 'package:notesy/services/auth/bloc/auth_bloc.dart';
 import 'package:notesy/services/auth/bloc/auth_event.dart';
 import 'package:notesy/services/auth/bloc/auth_state.dart';
@@ -12,7 +13,7 @@ import 'package:notesy/views/notes/create_update_note_view.dart';
 import 'package:notesy/views/notes/notes_view.dart';
 import 'package:notesy/views/register_view.dart';
 import 'package:notesy/views/verify_email_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ void main() {
     MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      title: 'Flutter Demo',
+      title: 'Notesy',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
